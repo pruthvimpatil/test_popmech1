@@ -1,8 +1,8 @@
 ---
-- hosts: "localhost"
+- hosts: all
   tasks:
-  - name: install awscli
+  - name: ls -lrt
     shell: ls -lrt
     delegate_to: localhost
-    register: pip
-  - debug: var=pip.stdout_lines
+    register: ls_output
+  - debug: var=ls_output.stdout_lines
